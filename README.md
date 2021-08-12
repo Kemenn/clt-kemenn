@@ -4,7 +4,7 @@ The client for Kemenn project.
 
 This client allows a user in danger to warn his colleagues by using a simple keyboard shortcut. Colleagues will then have a simple graphical window displayed with a message indicating the person in danger, and the location.
 
-This is the technical documentation. You can find the users documentation here : https://github.com/Kemenn/presentation.git
+You can found more technical details on documentation : https://github.com/Kemenn/documentation.git
 
 - [DESCRIPTION](#description)
 - [INSTALLATION](#installation)
@@ -16,23 +16,41 @@ This is the technical documentation. You can find the users documentation here :
 
 ## Description
 
-The client is made in 4 parts :
+### Sending messages
 
- - There is a service that **manages the connection** to the alert server. It works in parallel in a completely autonomous way.
+**Sending an alert**
 
- - There is the **shortcut detector**. It listens to the keyboard to detect the double press of the F12 key (by default). When the key has been pressed twice in a row, an alert is sent.
+A double press on the F12 key is enough to send an alert.
 
- - There is the **message manager**. As soon as a message is received, it processes it (answer to the server, display a window with a message, send an alert).
+It is possible to send a counter-indication in case of error, and thus a false alarm, in order to avoid panicking colleagues ;)
 
- - There is the **displayer**. It is responsible for displaying a window in a non-blocking way.
+**Confirmation of reading an alert**
+
+A user who receives an alert can click on a "Read" button. This has the effect of immediately notifying the person in danger that the alert has been read by such and such a person.
+
+This is intended to reassure, although it is not a necessity.
+
+**Canceling an alert**
+
+A user who has sent an alert by mistake can warn other users that it is a false alert. To do this, the user who sent the alert simply presses the "Cancel" button.
+
+This is to avoid the displacement of co-workers!
 
 
-### Deployement diagram
-![The deployement diagram](./docs/french_deployment_diagram.png)
+### User group :
+
+To determine who should receive the alert from which user, user groups are created. Thus a user of a group sends the alert to the other users of his group.
+The user can be part of several groups. In this case the recipients are all the other users of all the groups to which the user in danger belongs.
+A special group called "global group" allows users in this group to receive alerts from everyone!
+
+[Groups can be configured from the web interface.](#groups-management)
 
 
-### Use case diagram
-![The use case diagram](./docs/french_use_case_diagram.png)
+### Location :
+
+To determine the location of a device, we use its mac address. So there is a correspondence between the mac address and a humanly understandable name that is made.
+
+It is possible to configure this in the web interface. But if a client connects with a given device for the first time, the kemenn server detects it and automatically asks for a comprehensible location name in order to register it.
 
 
 
@@ -81,7 +99,7 @@ A completer
 
 ## Configuration
 
-The file "configuration.py" contain all configuration for client.
+The file "configuration.py" contain all configuration for client. You must to modify this file before create the .exe file.
 
 In order, you can set :
 
