@@ -20,7 +20,7 @@ You can found more technical details on documentation : https://github.com/Kemen
 
 **Sending an alert**
 
-A double press on the F12 key is enough to send an alert.
+A double press on the F12 key is enough to send an alert. The F12 key is configurable.
 
 It is possible to send a counter-indication in case of error, and thus a false alarm, in order to avoid panicking colleagues ;)
 
@@ -43,7 +43,7 @@ To determine who should receive the alert from which user, user groups are creat
 The user can be part of several groups. In this case the recipients are all the other users of all the groups to which the user in danger belongs.
 A special group called "global group" allows users in this group to receive alerts from everyone!
 
-[Groups can be configured from the web interface.](#groups-management)
+[Groups can be configured from the web interface.](https://github.com/Kemenn/srv-kemenn#-groups-management)
 
 
 ### Location :
@@ -93,7 +93,7 @@ If the dependencies are correctly satisfied, the executable should be in the "di
 
 #### Linux (debian based) :
 
-A completer
+ #TODO
 
 
 
@@ -109,7 +109,7 @@ In order, you can set :
 | PORT          | The listened port configure in kemenn server |
 | NBR_TRY       | The number of times the client tries to connect to the kemenn server before stopping. |
 | TIME_TRY      | Waiting time between two connection attempts. |
-| MAINTENANCE_TIME | Time to wait for a new connection attempt when the alert server is in maintenance. (See the srv-kemenn documentation) |
+| MAINTENANCE_TIME | Time to wait for a new connection attempt when the alert server is in maintenance. ([See the srv-kemenn documentation](https://github.com/Kemenn/srv-kemenn#command-interface)) |
 | ALERT_SHORTCUT | The key on the keyboard that must be pressed twice to send an alert. |
 |               |  |
 | ICON          | The path to the icon use in notification. |
